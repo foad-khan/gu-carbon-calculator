@@ -1,0 +1,167 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Carbon Footprint Calculator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo"><img src="images/_galgotais-logo-official.png" alt="Galgotias University" class="gu-logo" /> Carbon Calculator <span class="ai-badge">AI Powered</span></div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="aboutus.html">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="main-wrapper">
+    <!-- Input Form Section (Left) -->
+    <div class="container">
+      <h1>Carbon Footprint Calculator</h1>
+      <form id="calcForm">
+        <h2>Transportation</h2>
+        <label for="petrolCar">Petrol Car Distance (km):</label>
+        <input type="number" id="petrolCar" />
+        
+        <label for="dieselCar">Diesel Car Distance (km):</label>
+        <input type="number" id="dieselCar" />
+        
+        <label for="petrolTwoWheeler">Two-Wheeler Distance (km):</label>
+        <input type="number" id="petrolTwoWheeler" />
+        
+        <label for="electricTwoWheeler">Electric Two-Wheeler Distance (km):</label>
+        <input type="number" id="electricTwoWheeler" />
+
+        <label for="busDistance">Bus Distance (km):</label>
+        <input type="number" id="busDistance" />
+
+        <label for="trainDistance">Train Distance (km):</label>
+        <input type="number" id="trainDistance" />
+
+        <h2>Food Consumption</h2>
+        <label for="meatConsumption">Red Meat (kg):</label>
+        <input type="number" id="meatConsumption" />
+
+        <label for="dairyConsumption">Dairy Consumption (kg):</label>
+        <input type="number" id="dairyConsumption" />
+
+        <label for="fishConsumption">Fish Consumption (kg):</label>
+        <input type="number" id="fishConsumption" />
+
+        <label for="fruitsConsumption">Fruits (kg):</label>
+        <input type="number" id="fruitsConsumption" />
+
+        <label for="vegetablesConsumption">Vegetables (kg):</label>
+        <input type="number" id="vegetablesConsumption" />
+
+        <label for="grainsConsumption">Grains (kg):</label>
+        <input type="number" id="grainsConsumption" />
+
+        <label for="pulsesConsumption">Pulses (kg):</label>
+        <input type="number" id="pulsesConsumption" />
+
+        <h2>Home Heating</h2>
+        <label for="heatingFuel">Heating Fuel Used (KG):</label>
+        <input type="number" id="heatingFuel" />
+
+        <label for="electricityUsage">⚡ Electricity Usage (kWh/day):</label>
+        <div class="slider-group">
+          <input type="range" id="electricityUsage" name="electricityUsage" min="0" max="5000" value="1000" step="10" oninput="elecValue.innerText = this.value">
+          <span id="elecValue">1000</span> kWh
+        </div>
+
+        <label for="wasteGenerated">🗑️ Waste Generated (kg/day):</label>
+        <div class="slider-group">
+          <input type="range" id="wasteGenerated" min="0" max="50" value="5" step="1" oninput="wasteVal.innerText = this.value">
+          <span id="wasteVal">5</span> kg
+        </div>
+
+        <label for="waterUsage">💧 Water Usage (liters/day):</label>
+        <div class="slider-group">
+          <input type="range" id="waterUsage" min="0" max="1000" value="300" step="10" oninput="waterVal.innerText = this.value">
+          <span id="waterVal">300</span> L
+        </div>
+      </form>
+      
+      <!-- Calculate Button Moved Outside Form -->
+      <div style="margin-top: 20px;">
+        <button type="button" id="calculateBtn">Calculate Footprint</button>
+      </div>
+    </div>
+
+    <!-- Output Section (Right) -->
+    <div class="results">
+  <h2>Total Carbon Footprint</h2>
+  <h1 id="totalFootprint">0 tons CO2e</h1>
+  <p id="resultText">Total annual carbon footprint based on your input.</p>
+  <div class="cta">
+    <h3>Reduce Your Carbon Footprint</h3>
+    <p id="suggestionText">Contact us to learn how you can effectively lower your carbon footprint with our range of sustainable solutions.</p>
+    <!-- <button>Get Started</button> -->
+  </div>
+  <p><canvas id="footprintChart" width="400" height="400"></canvas></p>
+</div>
+  </div>
+  <section class="features-section">
+    <h2>Key Features</h2>
+    <div class="feature-cards">
+      <div class="feature-card">
+        <div class="card-inner">
+          <div class="card-front">
+            🌿 Personalized Analysis
+          </div>
+          <div class="card-back">
+            Tailored carbon footprint results based on your lifestyle inputs.
+          </div>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="card-inner">
+          <div class="card-front">
+            📊 Smart Visualization
+          </div>
+          <div class="card-back">
+            Dynamic charts that help you understand your impact clearly.
+          </div>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="card-inner">
+          <div class="card-front">
+            🤖 AI Powered
+          </div>
+          <div class="card-back">
+            Intelligent backend that estimates carbon output efficiently.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <img src="images/_galgotais-logo-official.png" alt="Galgotias University Logo" class="footer-logo" />
+        <p>AI-Powered Carbon Footprint Calculator</p>
+      </div>
+      <div class="footer-right">
+        <p>Made with ❤️ at Galgotias University</p>
+        <div class="footer-socials">
+          <a href="https://github.com/foad-khan" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://in.linkedin.com/in/abdullah-foad-19b95b198" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js.js"></script>
+</body>
+</html>
