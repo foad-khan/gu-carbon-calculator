@@ -106,22 +106,22 @@ window.addEventListener("DOMContentLoaded", function () {
 
     // AI-based suggestions to reduce carbon footprint
     const suggestions = [];
-    if (emissions.Transportation > 500) {
+    if (emissions.Transportation > 16.67) {
       suggestions.push("Reduce transporatation: Try carpooling, using public transport, or biking to cut transportation emissions.");
     }
-    if (emissions.Electricity > 1000) {
+    if (emissions.Electricity > 33.33) {
       suggestions.push("Save electricity: Switch to LED bulbs, unplug devices, or consider solar panels to lower your energy footprint.");
     }
-    if (emissions.Food > 1500) {
+    if (emissions.Food > 50.00) {
       suggestions.push("Adjust diet: Reduce red meat and dairy consumption; opt for plant-based meals to decrease food-related emissions.");
     }
-    if (emissions.Waste > 500) {
+    if (emissions.Waste > 16.67) {
       suggestions.push("Minimize waste: Recycle, compost, and reduce single-use plastics to lower your waste footprint.");
     }
-    if (emissions.Water > 500) {
+    if (emissions.Water > 16.67) {
       suggestions.push("Conserve water: Take shorter showers, fix leaks, and use water-efficient appliances to reduce water-related emissions.");
     }
-    if (emissions.Heating > 800) {
+    if (emissions.Heating > 26.67) {
       suggestions.push("Optimize heating: Insulate your home, lower the thermostat, or use a programmable thermostat to cut heating emissions.");
     }
     if (suggestions.length === 0) {

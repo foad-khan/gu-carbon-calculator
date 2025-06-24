@@ -74,8 +74,8 @@
 
         <label for="electricityUsage">⚡ Electricity Usage (kWh/day):</label>
         <div class="slider-group">
-          <input type="range" id="electricityUsage" name="electricityUsage" min="0" max="5000" value="1000" step="10" oninput="elecValue.innerText = this.value">
-          <span id="elecValue">1000</span> kWh
+          <input type="range" id="electricityUsage" name="electricityUsage" min="0" max="5000" value="1000" step="1" oninput="elecValue.innerText = this.value">
+          <span id="elecValue">300</span> kWh
         </div>
 
         <label for="wasteGenerated">🗑️ Waste Generated (kg/day):</label>
@@ -101,7 +101,7 @@
     <div class="results">
   <h2>Total Carbon Footprint</h2>
   <h1 id="totalFootprint">0 tons CO2e</h1>
-  <p id="resultText">Total annual carbon footprint based on your input.</p>
+  <p id="resultText">Total carbon footprint based on your input.</p>
   <div class="cta">
     <h3>Reduce Your Carbon Footprint</h3>
     <p id="suggestionText">Contact us to learn how you can effectively lower your carbon footprint with our range of sustainable solutions.</p>
